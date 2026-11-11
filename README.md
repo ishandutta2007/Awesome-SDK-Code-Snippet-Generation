@@ -68,7 +68,7 @@ OpenAPI Generator is the community fork of Swagger Codegen, created in 2018 by 4
 
 ### Swagger Codegen
 **Stack:** Java / Mustache templates | **License:** Apache-2.0
-Swagger Codegen is where OpenAPI code generation started, with nearly 18,000 GitHub stars and v3.0.82 released in August 2026 [citation:3]. It produces client SDKs in 40+ languages and server stubs in 20+, from OpenAPI 2.0 and 3.0 definitions. **Critical limitations:** It maintains two parallel lines (2.x for Swagger 2.0, 3.x for OpenAPI 3.0), **neither of which covers OpenAPI 3.1** — the request has been open since August 2023 [citation:3]. Upgrading to 3.x can also lose languages (Rust, Elixir, Haskell, Objective-C are 2.x-only). Community momentum has moved to OpenAPI Generator, with around 3,000 open issues and some features open since 2017 [citation:3].
+Swagger Codegen is where OpenAPI code generation started, with nearly 18,000 GitHub_Stars and v3.0.82 released in August 2026 [citation:3]. It produces client SDKs in 40+ languages and server stubs in 20+, from OpenAPI 2.0 and 3.0 definitions. **Critical limitations:** It maintains two parallel lines (2.x for Swagger 2.0, 3.x for OpenAPI 3.0), **neither of which covers OpenAPI 3.1** — the request has been open since August 2023 [citation:3]. Upgrading to 3.x can also lose languages (Rust, Elixir, Haskell, Objective-C are 2.x-only). Community momentum has moved to OpenAPI Generator, with around 3,000 open issues and some features open since 2017 [citation:3].
 **Best for:** Existing users with Swagger 2.0 specs that will not change, accepting irregular releases and the lack of 3.1 support.
 
 ### Kiota
