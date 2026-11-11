@@ -1,0 +1,192 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 360" width="100%" height="360">
+  <defs>
+    <!-- Background Gradient -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a0f1d" />
+      <stop offset="50%" stop-color="#0d1b2a" />
+      <stop offset="100%" stop-color="#1b263b" />
+    </linearGradient>
+
+    <!-- Accent Gradient -->
+    <linearGradient id="primaryGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#38bdf8" />
+      <stop offset="50%" stop-color="#818cf8" />
+      <stop offset="100%" stop-color="#c084fc" />
+    </linearGradient>
+
+    <!-- Glowing effects -->
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="8" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+
+    <filter id="subtleGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="3" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <style>
+    .bg-grid {
+      stroke: rgba(255, 255, 255, 0.05);
+      stroke-width: 1;
+    }
+    .pulse-circle {
+      animation: pulse 4s ease-in-out infinite alternate;
+    }
+    .orbit-node {
+      animation: float 6s ease-in-out infinite alternate;
+    }
+    .orbit-node-rev {
+      animation: floatRev 7s ease-in-out infinite alternate;
+    }
+    .flow-line {
+      stroke-dasharray: 8 12;
+      animation: dash 25s linear infinite;
+    }
+    .pulse-glow {
+      animation: glowFade 3s ease-in-out infinite alternate;
+    }
+    @keyframes dash {
+      to {
+        stroke-dashoffset: -1000;
+      }
+    }
+    @keyframes pulse {
+      0% { r: 3; opacity: 0.3; }
+      100% { r: 7; opacity: 0.9; }
+    }
+    @keyframes float {
+      0% { transform: translateY(0px) translateX(0px); }
+      100% { transform: translateY(-12px) translateX(8px); }
+    }
+    @keyframes floatRev {
+      0% { transform: translateY(0px) translateX(0px); }
+      100% { transform: translateY(12px) translateX(-8px); }
+    }
+    @keyframes glowFade {
+      0% { opacity: 0.4; }
+      100% { opacity: 0.9; }
+    }
+    .title-text {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      font-weight: 800;
+      font-size: 46px;
+      letter-spacing: -0.5px;
+      fill: #ffffff;
+    }
+    .subtitle-text {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      font-weight: 400;
+      font-size: 19px;
+      fill: #94a3b8;
+    }
+    .badge-label {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      font-size: 13px;
+      font-weight: 600;
+      fill: #e2e8f0;
+    }
+  </style>
+
+  <!-- Deep Canvas Background -->
+  <rect width="1200" height="360" rx="16" fill="url(#bgGrad)" />
+
+  <!-- Animated Background Matrix Grid -->
+  <g class="bg-grid">
+    <line x1="0" y1="60" x2="1200" y2="60" />
+    <line x1="0" y1="120" x2="1200" y2="120" />
+    <line x1="0" y1="180" x2="1200" y2="180" />
+    <line x1="0" y1="240" x2="1200" y2="240" />
+    <line x1="0" y1="300" x2="1200" y2="300" />
+    <line x1="120" y1="0" x2="120" y2="360" />
+    <line x1="240" y1="0" x2="240" y2="360" />
+    <line x1="360" y1="0" x2="360" y2="360" />
+    <line x1="480" y1="0" x2="480" y2="360" />
+    <line x1="600" y1="0" x2="600" y2="360" />
+    <line x1="720" y1="0" x2="720" y2="360" />
+    <line x1="840" y1="0" x2="840" y2="360" />
+    <line x1="960" y1="0" x2="960" y2="360" />
+    <line x1="1080" y1="0" x2="1080" y2="360" />
+  </g>
+
+  <!-- Dynamic Ambient Decorative Flow Stream (strictly in background) -->
+  <g opacity="0.35">
+    <path class="flow-line" d="M -50 280 C 300 240, 450 340, 750 290 C 950 250, 1100 320, 1250 260" fill="none" stroke="#38bdf8" stroke-width="2" />
+    <path class="flow-line" d="M -50 90 C 250 40, 500 130, 800 60 C 1000 10, 1150 90, 1250 50" fill="none" stroke="#c084fc" stroke-width="1.5" />
+    <circle cx="180" cy="80" r="4" fill="#38bdf8" class="pulse-circle" />
+    <circle cx="920" cy="65" r="5" fill="#818cf8" class="pulse-circle" />
+    <circle cx="1060" cy="290" r="4" fill="#c084fc" class="pulse-circle" />
+    <circle cx="140" cy="270" r="5" fill="#38bdf8" class="pulse-circle" />
+  </g>
+
+  <!-- Dynamic Animated Tech Floating Nodes (Background Lateral) -->
+  <g class="orbit-node" opacity="0.85">
+    <g transform="translate(80, 150)">
+      <rect width="90" height="32" rx="16" fill="#1e293b" stroke="#38bdf8" stroke-width="1.2" opacity="0.75" />
+      <text x="45" y="21" text-anchor="middle" class="badge-label" fill="#38bdf8">&lt;/&gt; OpenAPI</text>
+    </g>
+    <g transform="translate(1010, 140)">
+      <rect width="110" height="32" rx="16" fill="#1e293b" stroke="#818cf8" stroke-width="1.2" opacity="0.75" />
+      <text x="55" y="21" text-anchor="middle" class="badge-label" fill="#818cf8">⚡ Typed SDK</text>
+    </g>
+  </g>
+
+  <g class="orbit-node-rev" opacity="0.85">
+    <g transform="translate(120, 215)">
+      <rect width="80" height="30" rx="15" fill="#1e293b" stroke="#c084fc" stroke-width="1.2" opacity="0.75" />
+      <text x="40" y="20" text-anchor="middle" class="badge-label" fill="#c084fc">Snippets</text>
+    </g>
+    <g transform="translate(980, 215)">
+      <rect width="130" height="30" rx="15" fill="#1e293b" stroke="#38bdf8" stroke-width="1.2" opacity="0.75" />
+      <text x="65" y="20" text-anchor="middle" class="badge-label" fill="#38bdf8">REST • gRPC • CLI</text>
+    </g>
+  </g>
+
+  <!-- Glowing Focal Backdrop for Header (Ensures high contrast & readable foreground) -->
+  <circle cx="600" cy="180" r="220" fill="#38bdf8" opacity="0.08" filter="url(#glow)" class="pulse-glow" />
+  <circle cx="600" cy="180" r="140" fill="#818cf8" opacity="0.09" filter="url(#glow)" />
+
+  <!-- Foreground Content: Header & Titles (Guaranteed Unobscured) -->
+  <g>
+    <!-- Top Pill / Status Tag -->
+    <g transform="translate(485, 45)">
+      <rect width="230" height="32" rx="16" fill="#1e293b" stroke="url(#primaryGrad)" stroke-width="1.5" />
+      <circle cx="20" cy="16" r="5" fill="#22c55e" />
+      <text x="125" y="21" text-anchor="middle" class="badge-label" fill="#f8fafc">Curated Developer Ecosystem</text>
+    </g>
+
+    <!-- Main Title -->
+    <text x="600" y="140" text-anchor="middle" class="title-text">
+      Awesome SDK &amp; Code Snippet Generation
+    </text>
+
+    <!-- Gradient Emphasized Bar -->
+    <rect x="420" y="162" width="360" height="4" rx="2" fill="url(#primaryGrad)" filter="url(#subtleGlow)" />
+
+    <!-- Subtitle Line 1 -->
+    <text x="600" y="205" text-anchor="middle" class="subtitle-text">
+      Automate Typed Client SDKs, Code Samples &amp; Interactive Developer Tooling
+    </text>
+
+    <!-- Subtitle Line 2 -->
+    <text x="600" y="235" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="15px" fill="#64748b">
+      Enterprise SaaS Engines • Open-Source Generators • Multi-Language API Compilers
+    </text>
+
+    <!-- Bottom Feature Tag Chips -->
+    <g transform="translate(330, 275)">
+      <rect x="0" y="0" width="125" height="28" rx="14" fill="#0f172a" stroke="#334155" stroke-width="1" />
+      <text x="62" y="18" text-anchor="middle" font-family="sans-serif" font-size="12px" fill="#94a3b8">🚀 50+ Languages</text>
+
+      <rect x="140" y="0" width="120" height="28" rx="14" fill="#0f172a" stroke="#334155" stroke-width="1" />
+      <text x="200" y="18" text-anchor="middle" font-family="sans-serif" font-size="12px" fill="#94a3b8">⚙️ CI/CD Pipelines</text>
+
+      <rect x="275" y="0" width="135" height="28" rx="14" fill="#0f172a" stroke="#334155" stroke-width="1" />
+      <text x="342" y="18" text-anchor="middle" font-family="sans-serif" font-size="12px" fill="#94a3b8">🛡️ Type Safety &amp; AST</text>
+
+      <rect x="425" y="0" width="115" height="28" rx="14" fill="#0f172a" stroke="#334155" stroke-width="1" />
+      <text x="482" y="18" text-anchor="middle" font-family="sans-serif" font-size="12px" fill="#94a3b8">🤖 MCP &amp; Agents</text>
+    </g>
+  </g>
+</svg>
